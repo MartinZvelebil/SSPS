@@ -1,0 +1,21 @@
+C:\Users\marti\source\repos\3.K\Projekt správa vozového parku\Projekt správa vozového parku\bin\Debug\Projekt správa vozového parku.exe.config
+C:\Users\marti\source\repos\3.K\Projekt správa vozového parku\Projekt správa vozového parku\bin\Debug\Projekt správa vozového parku.exe
+C:\Users\marti\source\repos\3.K\Projekt správa vozového parku\Projekt správa vozového parku\bin\Debug\Projekt správa vozového parku.pdb
+C:\Users\marti\source\repos\3.K\Projekt správa vozového parku\Projekt správa vozového parku\obj\Debug\Projekt správa vozového parku.csprojAssemblyReference.cache
+C:\Users\marti\source\repos\3.K\Projekt správa vozového parku\Projekt správa vozového parku\obj\Debug\Projekt_správa_vozového_parku.Form1.resources
+C:\Users\marti\source\repos\3.K\Projekt správa vozového parku\Projekt správa vozového parku\obj\Debug\Projekt_správa_vozového_parku.Properties.Resources.resources
+C:\Users\marti\source\repos\3.K\Projekt správa vozového parku\Projekt správa vozového parku\obj\Debug\Projekt správa vozového parku.csproj.GenerateResource.cache
+C:\Users\marti\source\repos\3.K\Projekt správa vozového parku\Projekt správa vozového parku\obj\Debug\Projekt správa vozového parku.exe
+C:\Users\marti\source\repos\3.K\Projekt správa vozového parku\Projekt správa vozového parku\obj\Debug\Projekt správa vozového parku.pdb
+C:\Users\marti\source\repos\3.K\Projekt správa vozového parku\Projekt správa vozového parku\obj\Debug\Projekt_správa_vozového_parku.RegForm.resources
+C:\Users\marti\source\repos\3.K\Projekt správa vozového parku\Projekt správa vozového parku\obj\Debug\Projekt_správa_vozového_parku.UserSpace.resources
+C:\Users\marti\source\repos\3.K\Projekt správa vozového parku\Projekt správa vozového parku\obj\Debug\Projekt_správa_vozového_parku.ChangePass.resources
+C:\Users\marti\source\repos\3.K\Projekt správa vozového parku\Projekt správa vozového parku\obj\Debug\Projekt_správa_vozového_parku.AdminSpace.resources
+C:\Users\marti\source\repos\3.K\Projekt správa vozového parku\Projekt správa vozového parku\obj\Debug\Projekt_správa_vozového_parku.NewReservation.resources
+C:\Users\marti\source\repos\3.K\Projekt správa vozového parku\Projekt správa vozového parku\obj\Debug\Projekt_správa_vozového_parku.ADMIN___AddCar.resources
+C:\Users\marti\source\repos\3.K\Projekt správa vozového parku\Projekt správa vozového parku\obj\Debug\Projekt_správa_vozového_parku.ADMIN___DeleteUser.resources
+C:\Users\marti\source\repos\3.K\Projekt správa vozového parku\Projekt správa vozového parku\obj\Debug\Projekt_správa_vozového_parku.ADMIN___DeleteCar.resources
+C:\Users\marti\source\repos\3.K\Projekt správa vozového parku\Projekt správa vozového parku\obj\Debug\Projekt_správa_vozového_parku.ADMIN___ShowAllUsers.resources
+C:\Users\marti\source\repos\3.K\Projekt správa vozového parku\Projekt správa vozového parku\obj\Debug\Projekt_správa_vozového_parku.ADMIN___ShowAllCars.resources
+C:\Users\marti\source\repos\3.K\Projekt správa vozového parku\Projekt správa vozového parku\obj\Debug\Projekt_správa_vozového_parku.ShowMyReservations.resources
+C:\Users\marti\source\repos\3.K\Projekt správa vozového parku\Projekt správa vozového parku\obj\Debug\Projekt_správa_vozového_parku.ADMIN___ShowAllReservations.resources
