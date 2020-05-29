@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.LoginButton = new System.Windows.Forms.Button();
-            this.RegisterButton = new System.Windows.Forms.Button();
             this.UsernameLabel = new System.Windows.Forms.Label();
             this.PasswordLabel = new System.Windows.Forms.Label();
             this.TextboxUsername = new System.Windows.Forms.TextBox();
@@ -38,23 +37,13 @@
             // 
             // LoginButton
             // 
-            this.LoginButton.Location = new System.Drawing.Point(165, 127);
+            this.LoginButton.Location = new System.Drawing.Point(76, 132);
             this.LoginButton.Name = "LoginButton";
-            this.LoginButton.Size = new System.Drawing.Size(78, 28);
+            this.LoginButton.Size = new System.Drawing.Size(156, 28);
             this.LoginButton.TabIndex = 0;
             this.LoginButton.Text = "Login";
             this.LoginButton.UseVisualStyleBackColor = true;
             this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
-            // 
-            // RegisterButton
-            // 
-            this.RegisterButton.Location = new System.Drawing.Point(62, 127);
-            this.RegisterButton.Name = "RegisterButton";
-            this.RegisterButton.Size = new System.Drawing.Size(78, 28);
-            this.RegisterButton.TabIndex = 1;
-            this.RegisterButton.Text = "Register";
-            this.RegisterButton.UseVisualStyleBackColor = true;
-            this.RegisterButton.Click += new System.EventHandler(this.RegisterButton_Click);
             // 
             // UsernameLabel
             // 
@@ -100,7 +89,6 @@
             this.Controls.Add(this.TextboxUsername);
             this.Controls.Add(this.PasswordLabel);
             this.Controls.Add(this.UsernameLabel);
-            this.Controls.Add(this.RegisterButton);
             this.Controls.Add(this.LoginButton);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -113,7 +101,6 @@
         #endregion
 
         private System.Windows.Forms.Button LoginButton;
-        private System.Windows.Forms.Button RegisterButton;
         private System.Windows.Forms.Label UsernameLabel;
         private System.Windows.Forms.Label PasswordLabel;
         private System.Windows.Forms.TextBox TextboxUsername;

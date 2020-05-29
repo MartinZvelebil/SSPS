@@ -40,6 +40,8 @@
             this.ItemsInSecond = new System.Windows.Forms.ListBox();
             this.BoxUID = new System.Windows.Forms.ListBox();
             this.SubmitReservation = new System.Windows.Forms.Button();
+            this.EndDatePicker = new System.Windows.Forms.DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // WhatCarLabel
@@ -56,7 +58,7 @@
             // 
             this.WhenLabel.AutoSize = true;
             this.WhenLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.25F);
-            this.WhenLabel.Location = new System.Drawing.Point(167, 368);
+            this.WhenLabel.Location = new System.Drawing.Point(167, 355);
             this.WhenLabel.Name = "WhenLabel";
             this.WhenLabel.Size = new System.Drawing.Size(304, 36);
             this.WhenLabel.TabIndex = 1;
@@ -64,12 +66,12 @@
             // 
             // DatePicker
             // 
-            this.DatePicker.Location = new System.Drawing.Point(215, 407);
+            this.DatePicker.Location = new System.Drawing.Point(78, 394);
             this.DatePicker.MinDate = new System.DateTime(2020, 5, 14, 0, 0, 0, 0);
             this.DatePicker.Name = "DatePicker";
             this.DatePicker.Size = new System.Drawing.Size(200, 20);
             this.DatePicker.TabIndex = 2;
-            this.DatePicker.Value = new System.DateTime(2020, 5, 14, 0, 0, 0, 0);
+            this.DatePicker.Value = new System.DateTime(2020, 5, 28, 0, 0, 0, 0);
             // 
             // label6
             // 
@@ -147,7 +149,7 @@
             this.BoxUID.Name = "BoxUID";
             this.BoxUID.Size = new System.Drawing.Size(120, 251);
             this.BoxUID.TabIndex = 9;
-            this.BoxUID.DoubleClick += new System.EventHandler(this.BoxUID_DoubleClick);
+            this.BoxUID.Click += new System.EventHandler(this.BoxUID_Click);
             // 
             // SubmitReservation
             // 
@@ -159,11 +161,32 @@
             this.SubmitReservation.UseVisualStyleBackColor = true;
             this.SubmitReservation.Click += new System.EventHandler(this.SubmitReservation_Click);
             // 
+            // EndDatePicker
+            // 
+            this.EndDatePicker.Location = new System.Drawing.Point(336, 394);
+            this.EndDatePicker.MinDate = new System.DateTime(2020, 5, 14, 0, 0, 0, 0);
+            this.EndDatePicker.Name = "EndDatePicker";
+            this.EndDatePicker.Size = new System.Drawing.Size(200, 20);
+            this.EndDatePicker.TabIndex = 18;
+            this.EndDatePicker.Value = new System.DateTime(2020, 5, 28, 0, 0, 0, 0);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.25F);
+            this.label7.Location = new System.Drawing.Point(294, 382);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(25, 36);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "-";
+            // 
             // NewReservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(627, 507);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.EndDatePicker);
             this.Controls.Add(this.SubmitReservation);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -199,5 +222,7 @@
         private System.Windows.Forms.ListBox ItemsInSecond;
         private System.Windows.Forms.ListBox BoxUID;
         private System.Windows.Forms.Button SubmitReservation;
+        private System.Windows.Forms.DateTimePicker EndDatePicker;
+        private System.Windows.Forms.Label label7;
     }
 }

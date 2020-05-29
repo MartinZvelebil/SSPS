@@ -52,23 +52,36 @@ namespace Projekt_správa_vozového_parku
                     {
                         if (InFile[a] == users[b])
                         {
-
-                            if (DateTime.Compare(DateTime.Parse(InFile[a + 1].Replace("0:00:00", "").Replace(". ", "-")), now) < 0) //starší než dnešní datum
+                            bool jetamdatum = false;
+                            int datumcount = 1;
+                            while (jetamdatum == false)
                             {
-                                NameOfUserPast.Items.Add(users[b]);
+                                if (DateTime.TryParse(InFile[a + datumcount], out DateTime result))
+                                {                                    
+                                    if (DateTime.Compare(DateTime.Parse(InFile[a + datumcount].Replace("0:00:00", "").Replace(". ", "-")), now) < 0) //starší než dnešní datum
+                                    {
+                                        NameOfUserPast.Items.Add(users[b]);
 
-                                DateBoxPast.Items.Add(InFile[a + 1].Replace("0:00:00", ""));
+                                        DateBoxPast.Items.Add(InFile[a + datumcount].Replace("0:00:00", ""));
 
-                                CarBoxPast.Items.Add(filesremoved[i]);
-                            }
-                            else  //je aktuální a platná rezervace
-                            {
-                                NameOfUser.Items.Add(users[b]);
+                                        CarBoxPast.Items.Add(filesremoved[i]);
+                                        datumcount++;
+                                    }
+                                    else  //je aktuální a platná rezervace
+                                    {
+                                        NameOfUser.Items.Add(users[b]);
 
-                                DateBox.Items.Add(InFile[a + 1].Replace("0:00:00", ""));
+                                        DateBox.Items.Add(InFile[a + datumcount].Replace("0:00:00", ""));
 
-                                CarBox.Items.Add(filesremoved[i]);
-                            }
+                                        CarBox.Items.Add(filesremoved[i]);
+                                        datumcount++;
+                                    }
+                                }
+                                else
+                                {
+                                    jetamdatum = true;
+                                }                              
+                            }                           
                         }
                     }
                 }

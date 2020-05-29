@@ -37,10 +37,82 @@ namespace Projekt_správa_vozového_parku
             {
                 BoxUID.Items.Add(files[i]);  //add cars soubory
             }
+            BoxUID.SetSelected(0, true);
 
         }
 
-        private void BoxUID_DoubleClick(object sender, EventArgs e)
+        private void SubmitReservation_Click(object sender, EventArgs e)
+        {
+            if (BoxUID.SelectedItem == null)
+            {
+                MessageBox.Show("Please click car you want and choose day!");
+                return;
+            }
+
+            string selectedCar = BoxUID.SelectedItem.ToString();  //selected item v boxu
+            DateTime reservation = DatePicker.Value.Date;   //date který byl vybrán, ale bez času!
+            DateTime reservationEnd = EndDatePicker.Value.Date;
+            string userName = Form1.NameOfUser;   //převzaté jméno
+
+            List<DateTime> allDates = new List<DateTime>();
+            for (DateTime date = reservation; date <= reservationEnd; date = date.AddDays(1))  //List všech datetimu mezi začátkem a koncem rezervace
+            {
+                allDates.Add(date);
+               // MessageBox.Show(date.ToString());
+            }
+
+            string[] selectedCarWithoutTxt = selectedCar.Split('.');  //potřebuju název souboru bez .txt
+            bool obsahuje = false;  //není termín již obsazen?
+            bool spatnydatum = false; //není termín špatně zadán?
+            if (File.Exists(@"data\\administrator\\carsreserved\\" + selectedCarWithoutTxt[0] + "reservation.txt") == false) //existuje soubor? Pokud ne, víme že jsou prázdné rezervace
+            {
+                obsahuje = false;
+            }
+            else if (reservation.DayOfYear > reservationEnd.DayOfYear)
+            {
+                spatnydatum = true;                
+            }
+            else
+            {                
+                var sr = new StreamReader("data\\administrator\\carsreserved\\" + selectedCarWithoutTxt[0] + "reservation.txt");  //readuju soubor s rezervací
+                string contains = sr.ReadToEnd();
+                for (int i = 0; i < allDates.Count; i++)
+                {
+                    if (contains.Contains(allDates[i].ToString())) //ověřuji, že v souboru nikde není stejný datum, jako který má v plánu uživatel zadat
+                    {
+                        obsahuje = true;  //obsazeno = true
+                    }
+                }
+                sr.Close();
+            }
+
+            if (obsahuje == true)  //je obsazeno true?
+            {
+                MessageBox.Show("I'm sorry, this car is already taken on your date.");
+                return;
+            }
+            else if (spatnydatum == true)
+            {
+                MessageBox.Show("I'm sorry, your selected starting date is posterior than the ending date.");
+                return;
+            }
+            else
+            {
+                Directory.CreateDirectory("data\\administrator\\carsreserved");  //pro jistotu vytvářím adresář, když by se někdy smazal, at neni problem
+                using (StreamWriter sw = File.AppendText("data\\administrator\\carsreserved\\" + selectedCarWithoutTxt[0] + "reservation.txt"))  //streamwriterem zapíšu vše potřebné
+                {
+                    sw.WriteLine(userName);
+                    for (int i = 0; i < allDates.Count; i++)
+                    {
+                        sw.WriteLine(allDates[i]);
+                    }
+                    sw.WriteLine("");   //odděluji mezerou každou rezervaci
+                    MessageBox.Show("Reservation was succesfull");
+                }
+            }
+        }
+
+        private void BoxUID_Click(object sender, EventArgs e)
         {
             string[] files = Directory.GetFiles("data\\administrator\\"); //load all files
             string[] filesremoved = new string[files.Length];  //znovu inicializace pole filu, protože je chci zobrazit bez .txt
@@ -64,54 +136,6 @@ namespace Projekt_správa_vozového_parku
                     {
                         ItemsInSecond.Items.Add(InFile[a]);     //nahraješ každý člen pole na zvláštní řádek v listu
                     }
-                }
-            }
-        }
-
-        private void SubmitReservation_Click(object sender, EventArgs e)
-        {
-            if (BoxUID.SelectedItem == null)
-            {
-                MessageBox.Show("Please double click car you want and choose day!");
-                return;
-            }
-
-            string selectedCar = BoxUID.SelectedItem.ToString();  //selected item v boxu
-            DateTime reservation = DatePicker.Value.Date;   //date který byl vybrán, ale bez času!
-            string userName = Form1.NameOfUser;   //převzaté jméno
-
-            string[] selectedCarWithoutTxt = selectedCar.Split('.');  //potřebuju název souboru bez .txt
-            bool obsahuje = false;  //není termín již obsazen?
-
-            if (File.Exists(@"data\\administrator\\carsreserved\\" + selectedCarWithoutTxt[0] + "reservation.txt") == false) //existuje soubor? Pokud ne, víme že jsou prázdné rezervace
-            {
-                obsahuje = false;             
-            }
-            else
-            {
-                var sr = new StreamReader("data\\administrator\\carsreserved\\" + selectedCarWithoutTxt[0] + "reservation.txt");  //readuju soubor s rezervací
-                string contains = sr.ReadToEnd();
-                if (contains.Contains(reservation.ToString())) //ověřuji, že v souboru nikde není stejný datum, jako který má v plánu uživatel zadat
-                {
-                    obsahuje = true;  //obsazeno = true
-                }
-                sr.Close();
-            }
-
-            if (obsahuje == true)  //je obsazeno true?
-            {
-                MessageBox.Show("I'm sorry, this car is already taken on your date.");
-                return;
-            }
-            else
-            {
-                Directory.CreateDirectory("data\\administrator\\carsreserved");  //pro jistotu vytvářím adresář, když by se někdy smazal, at neni problem
-                using (StreamWriter sw = File.AppendText("data\\administrator\\carsreserved\\" + selectedCarWithoutTxt[0] + "reservation.txt"))  //streamwriterem zapíšu vše potřebné
-                {
-                    sw.WriteLine(userName);
-                    sw.WriteLine(reservation);
-                    sw.WriteLine("");   //odděluji mezerou každou rezervaci
-                    MessageBox.Show("Reservation was succesfull");
                 }
             }
         }

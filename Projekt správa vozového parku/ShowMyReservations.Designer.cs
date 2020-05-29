@@ -46,6 +46,7 @@
             this.DateBox.FormattingEnabled = true;
             this.DateBox.Location = new System.Drawing.Point(26, 94);
             this.DateBox.Name = "DateBox";
+            this.DateBox.SelectionMode = System.Windows.Forms.SelectionMode.None;
             this.DateBox.Size = new System.Drawing.Size(120, 277);
             this.DateBox.TabIndex = 0;
             this.DateBox.DoubleClick += new System.EventHandler(this.DateBox_DoubleClick);

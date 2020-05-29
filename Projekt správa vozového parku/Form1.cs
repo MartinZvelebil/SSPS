@@ -20,12 +20,6 @@ namespace Projekt_správa_vozového_parku
             InitializeComponent();
         }
 
-        private void RegisterButton_Click(object sender, EventArgs e) // show form registrace
-        {
-            RegForm registrationForm = new RegForm();
-            registrationForm.Show();
-        }
-
         private void LoginButton_Click(object sender, EventArgs e)
         {
             if (TextboxUsername.Text == "" || TextboxUsername.Text == " " || TextboxPassword.Text.Length < 6) // check jestli heslo a text jsou validní
@@ -83,7 +77,7 @@ namespace Projekt_správa_vozového_parku
                         MessageBox.Show("Error - user or password is wrong!");
                     }
                 }
-            }
+            }           
         }
     }
 }

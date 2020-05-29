@@ -36,9 +36,13 @@ namespace Projekt_správa_vozového_parku
                 }
             }
             {
-                if (TextboxUsername.Text == "" || TextboxUsername.Text == " " || TextboxPassword.Text.Length < 6)
+                if (TextboxUsername.Text == "" || TextboxUsername.Text == " ")
                 {
-                    MessageBox.Show("Username or Password is in wrong format!");
+                    MessageBox.Show("Username cannot be empty!");
+                }
+                else if (TextboxPassword.Text.Length < 6)
+                {
+                    MessageBox.Show("Password must be atleast 6 characters long!");
                 }
                 else
                 {

@@ -25,6 +25,7 @@ namespace Projekt_správa_vozového_parku
 
         private void ShowMyReservations_Load(object sender, EventArgs e)
         {
+
             string[] files = Directory.GetFiles("data\\administrator\\carsreserved\\"); //load all files
             string username = Form1.NameOfUser;
 
@@ -40,6 +41,8 @@ namespace Projekt_správa_vozového_parku
             }
 
 
+
+
             for (int i = 0; i < files.Length; i++)
             {
                 string[] InFile = File.ReadAllLines(files[i]);
@@ -47,26 +50,38 @@ namespace Projekt_správa_vozového_parku
                 {
                     if (InFile[a] == username)
                     {
-                        DateBox.Items.Add(InFile[a + 1].Replace("0:00:00", ""));
-                        CarBox.Items.Add(filesremoved[i]);
+                        bool jetamdatum = false;
+                        int datumcount = 1;
+                        while (jetamdatum == false)
+                        {
+                            if (DateTime.TryParse(InFile[a + datumcount], out DateTime result))
+                            {
+                                DateBox.Items.Add(InFile[a + datumcount].Replace("0:00:00", ""));
+                                CarBox.Items.Add(filesremoved[i]);
+                                datumcount++;
+                            }
+                            else
+                            {
+                                jetamdatum = true;
+                            }
+                        }
                     }
                 }
             }
+            CarBox.SelectedIndex = 0;
+            MessageBox.Show("Warning: If you delete one day of your more day reservation, whole reservation will delete!");
+           
         }
 
         private void DeleteSelectedReservation_Click(object sender, EventArgs e)
         {
-            if (DateBox.SelectedItem == null)
-            {
-                MessageBox.Show("Choose date to remove please!");
-                return;
-            }
-            else if (CarBox.SelectedItem == null)
+
+            if (CarBox.SelectedItem == null)
             {
                 MessageBox.Show("Choose car to remove please!");
                 return;
             }
-            var selectedDate = (string)DateBox.SelectedItem;
+            var selectedDate = DateBox.Items[CarBox.SelectedIndex].ToString();
             string selectedCar = CarBox.SelectedItem.ToString();
 
             string[] filesReserved = Directory.GetFiles("data\\administrator\\carsreserved\\"); //load all files of RESERVED
@@ -79,12 +94,34 @@ namespace Projekt_správa_vozového_parku
                     string[] AllLines = File.ReadAllLines(filesReserved[i]);
                     for (int a = 0; a < AllLines.Length; a++)
                     {
-                        if (AllLines[a].Contains(selectedDate))
+                        bool jetamjmeno = false;
+                        int datumcount = 1;
+                        if (AllLines[a].Contains(selectedDate))  //najdeme v souboru datum!
                         {
-                            AllLines[a] = "";
-                            AllLines[a - 1] = "";
+                            while (jetamjmeno == false)  //find name
+                            {
+                                if (DateTime.TryParse(AllLines[a - datumcount], out DateTime result))  //pokud je to datetime, hledáme dál nahoru jmeno
+                                {
+                                    datumcount++;
+                                    continue;
+                                }
+                                else  //je to jmeno
+                                {
+                                    jetamjmeno = true;
+                                    if (AllLines[a - datumcount] != "") //vymazat jmeno
+                                    {
+                                        while (AllLines[a - datumcount] != "") //postupujeme dál dolu a hledáme, kde končí daná rezervace ("")
+                                        {
+                                            AllLines[a - datumcount] = "";
+                                            datumcount--;
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
+
+
                     using (StreamWriter sw = new StreamWriter(filesReserved[i]))
                     {
                         for (int a = 0; a < AllLines.Length; a++)
@@ -114,12 +151,12 @@ namespace Projekt_správa_vozového_parku
             string[] filesremoved = new string[filesUnreserved.Length];
             for (int i = 0; i < filesUnreserved.Length; i++)
             {
-                filesremoved[i] = filesUnreserved[i];               
+                filesremoved[i] = filesUnreserved[i];
             }
-            
+
             for (int i = 0; i < filesremoved.Length; i++)
             {
-                filesremoved[i] = filesremoved[i].Remove(0, 19).Replace(".txt","");
+                filesremoved[i] = filesremoved[i].Remove(0, 19).Replace(".txt", "");
             }
             //skoro stejné jako v showAllCars
             for (int i = 0; i < filesremoved.Length; i++)

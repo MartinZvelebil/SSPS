@@ -19,11 +19,11 @@ namespace Projekt_správa_vozového_parku
         }
 
         private void Logout_button_Click(object sender, EventArgs e)
-        {          
+        {
             this.Close();
         }
 
-        private void ChangePasssButton_Click(object sender, EventArgs e) 
+        private void ChangePasssButton_Click(object sender, EventArgs e)
         {
             ChangePass Changepassform = new ChangePass();
             Changepassform.Show();
@@ -31,8 +31,17 @@ namespace Projekt_správa_vozového_parku
 
         private void UserSpace_Load(object sender, EventArgs e)
         {
+            
             WelcomeLabel.Text = "Welcome " + Form1.NameOfUser;                                 // Label pro vítání uživatele s jeho jménem
-           
+            string[] files = File.ReadAllLines("data\\" + Form1.NameOfUser + "\\data.ls");
+            if (files.Length == 3)
+            {
+                last_login.Text = files[files.Length - 1]; //když je user uplně new - má jen jeden log
+            }
+            else
+            {
+                last_login.Text = files[files.Length - 2];
+            }         
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -52,6 +61,6 @@ namespace Projekt_správa_vozového_parku
             ShowMyReservations showres = new ShowMyReservations();
             showres.Show();
         }
-        
+
     }
 }

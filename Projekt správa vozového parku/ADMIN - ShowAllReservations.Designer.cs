@@ -44,6 +44,7 @@
             this.NameOfUser.FormattingEnabled = true;
             this.NameOfUser.Location = new System.Drawing.Point(66, 135);
             this.NameOfUser.Name = "NameOfUser";
+            this.NameOfUser.SelectionMode = System.Windows.Forms.SelectionMode.None;
             this.NameOfUser.Size = new System.Drawing.Size(120, 108);
             this.NameOfUser.TabIndex = 18;
             // 
@@ -52,6 +53,7 @@
             this.CarBox.FormattingEnabled = true;
             this.CarBox.Location = new System.Drawing.Point(381, 135);
             this.CarBox.Name = "CarBox";
+            this.CarBox.SelectionMode = System.Windows.Forms.SelectionMode.None;
             this.CarBox.Size = new System.Drawing.Size(120, 108);
             this.CarBox.TabIndex = 17;
             // 
@@ -70,6 +72,7 @@
             this.DateBox.FormattingEnabled = true;
             this.DateBox.Location = new System.Drawing.Point(224, 135);
             this.DateBox.Name = "DateBox";
+            this.DateBox.SelectionMode = System.Windows.Forms.SelectionMode.None;
             this.DateBox.Size = new System.Drawing.Size(120, 108);
             this.DateBox.TabIndex = 15;
             // 
@@ -78,6 +81,7 @@
             this.NameOfUserPast.FormattingEnabled = true;
             this.NameOfUserPast.Location = new System.Drawing.Point(66, 301);
             this.NameOfUserPast.Name = "NameOfUserPast";
+            this.NameOfUserPast.SelectionMode = System.Windows.Forms.SelectionMode.None;
             this.NameOfUserPast.Size = new System.Drawing.Size(120, 95);
             this.NameOfUserPast.TabIndex = 21;
             // 
@@ -86,6 +90,7 @@
             this.CarBoxPast.FormattingEnabled = true;
             this.CarBoxPast.Location = new System.Drawing.Point(381, 301);
             this.CarBoxPast.Name = "CarBoxPast";
+            this.CarBoxPast.SelectionMode = System.Windows.Forms.SelectionMode.None;
             this.CarBoxPast.Size = new System.Drawing.Size(120, 95);
             this.CarBoxPast.TabIndex = 20;
             // 
@@ -94,6 +99,7 @@
             this.DateBoxPast.FormattingEnabled = true;
             this.DateBoxPast.Location = new System.Drawing.Point(224, 301);
             this.DateBoxPast.Name = "DateBoxPast";
+            this.DateBoxPast.SelectionMode = System.Windows.Forms.SelectionMode.None;
             this.DateBoxPast.Size = new System.Drawing.Size(120, 95);
             this.DateBoxPast.TabIndex = 19;
             // 

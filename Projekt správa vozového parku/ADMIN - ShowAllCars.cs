@@ -36,18 +36,18 @@ namespace Projekt_správa_vozového_parku
             {
                 BoxUID.Items.Add(files[i]);
             }
+            BoxUID.SelectedIndex = 0;
         }
 
-        private void BoxUID_DoubleClick(object sender, EventArgs e)
+        private void BoxUID_Click(object sender, EventArgs e)
         {
-
             string[] files = Directory.GetFiles("data\\administrator\\"); //load all files
             string[] filesremoved = new string[files.Length];
             for (int i = 0; i < files.Length; i++)
             {
                 filesremoved[i] = files[i];
             }
-            
+
             for (int i = 0; i < filesremoved.Length; i++)
             {
                 filesremoved[i] = filesremoved[i].Remove(0, 19);
@@ -63,7 +63,7 @@ namespace Projekt_správa_vozového_parku
                         ItemsInSecond.Items.Add(InFile[a]);
                     }
                 }
-            }           
+            }
         }
     }
 }

@@ -46,7 +46,7 @@
             this.BoxUID.Name = "BoxUID";
             this.BoxUID.Size = new System.Drawing.Size(120, 251);
             this.BoxUID.TabIndex = 1;
-            this.BoxUID.DoubleClick += new System.EventHandler(this.BoxUID_DoubleClick);
+            this.BoxUID.Click += new System.EventHandler(this.BoxUID_Click);
             // 
             // ItemsInSecond
             // 

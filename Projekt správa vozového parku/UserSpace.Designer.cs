@@ -35,13 +35,14 @@
             this.ShowUserReservation = new System.Windows.Forms.Button();
             this.CancelReservButt = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.last_login = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Logout_button
             // 
             this.Logout_button.BackColor = System.Drawing.Color.Red;
             this.Logout_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.Logout_button.Location = new System.Drawing.Point(12, 36);
+            this.Logout_button.Location = new System.Drawing.Point(12, 52);
             this.Logout_button.Name = "Logout_button";
             this.Logout_button.Size = new System.Drawing.Size(149, 34);
             this.Logout_button.TabIndex = 0;
@@ -53,7 +54,7 @@
             // 
             this.ChangePasssButton.BackColor = System.Drawing.Color.Red;
             this.ChangePasssButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.ChangePasssButton.Location = new System.Drawing.Point(167, 36);
+            this.ChangePasssButton.Location = new System.Drawing.Point(167, 52);
             this.ChangePasssButton.Name = "ChangePasssButton";
             this.ChangePasssButton.Size = new System.Drawing.Size(149, 34);
             this.ChangePasssButton.TabIndex = 1;
@@ -90,7 +91,7 @@
             this.ShowUserReservation.Location = new System.Drawing.Point(116, 228);
             this.ShowUserReservation.Name = "ShowUserReservation";
             this.ShowUserReservation.Size = new System.Drawing.Size(200, 34);
-            this.ShowUserReservation.TabIndex = 4;
+            this.ShowUserReservation.TabIndex = 5;
             this.ShowUserReservation.Text = "Show my reservations";
             this.ShowUserReservation.UseVisualStyleBackColor = false;
             this.ShowUserReservation.Click += new System.EventHandler(this.ShowUserReservation_Click);
@@ -102,7 +103,7 @@
             this.CancelReservButt.Location = new System.Drawing.Point(12, 228);
             this.CancelReservButt.Name = "CancelReservButt";
             this.CancelReservButt.Size = new System.Drawing.Size(74, 34);
-            this.CancelReservButt.TabIndex = 5;
+            this.CancelReservButt.TabIndex = 4;
             this.CancelReservButt.Text = "Cancel ";
             this.CancelReservButt.UseVisualStyleBackColor = false;
             this.CancelReservButt.Click += new System.EventHandler(this.CancelReservButt_Click);
@@ -117,12 +118,22 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "/";
             // 
+            // last_login
+            // 
+            this.last_login.AutoSize = true;
+            this.last_login.Location = new System.Drawing.Point(13, 36);
+            this.last_login.Name = "last_login";
+            this.last_login.Size = new System.Drawing.Size(40, 13);
+            this.last_login.TabIndex = 7;
+            this.last_login.Text = "last log";
+            // 
             // UserSpace
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(328, 274);
+            this.Controls.Add(this.last_login);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CancelReservButt);
             this.Controls.Add(this.ShowUserReservation);
@@ -148,5 +159,6 @@
         private System.Windows.Forms.Button ShowUserReservation;
         private System.Windows.Forms.Button CancelReservButt;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label last_login;
     }
 }

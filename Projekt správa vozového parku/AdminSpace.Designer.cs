@@ -45,7 +45,7 @@
             this.AddCarButton.Location = new System.Drawing.Point(293, 69);
             this.AddCarButton.Name = "AddCarButton";
             this.AddCarButton.Size = new System.Drawing.Size(164, 46);
-            this.AddCarButton.TabIndex = 0;
+            this.AddCarButton.TabIndex = 1;
             this.AddCarButton.Text = "Add car for rent";
             this.AddCarButton.UseVisualStyleBackColor = false;
             this.AddCarButton.Click += new System.EventHandler(this.AddCarButton_Click);
@@ -67,7 +67,7 @@
             this.CreateUserButton.Location = new System.Drawing.Point(12, 69);
             this.CreateUserButton.Name = "CreateUserButton";
             this.CreateUserButton.Size = new System.Drawing.Size(164, 46);
-            this.CreateUserButton.TabIndex = 2;
+            this.CreateUserButton.TabIndex = 0;
             this.CreateUserButton.Text = "Create User";
             this.CreateUserButton.UseVisualStyleBackColor = false;
             this.CreateUserButton.Click += new System.EventHandler(this.CreateUserButton_Click);
@@ -79,7 +79,7 @@
             this.DeleteUserButton.Location = new System.Drawing.Point(12, 121);
             this.DeleteUserButton.Name = "DeleteUserButton";
             this.DeleteUserButton.Size = new System.Drawing.Size(164, 46);
-            this.DeleteUserButton.TabIndex = 3;
+            this.DeleteUserButton.TabIndex = 2;
             this.DeleteUserButton.Text = "Delete User";
             this.DeleteUserButton.UseVisualStyleBackColor = false;
             this.DeleteUserButton.Click += new System.EventHandler(this.DeleteUserButton_Click);
@@ -91,7 +91,7 @@
             this.DeleteCarButton.Location = new System.Drawing.Point(293, 121);
             this.DeleteCarButton.Name = "DeleteCarButton";
             this.DeleteCarButton.Size = new System.Drawing.Size(164, 46);
-            this.DeleteCarButton.TabIndex = 4;
+            this.DeleteCarButton.TabIndex = 3;
             this.DeleteCarButton.Text = "Delete car for rent";
             this.DeleteCarButton.UseVisualStyleBackColor = false;
             this.DeleteCarButton.Click += new System.EventHandler(this.DeleteCarButton_Click);
@@ -103,7 +103,7 @@
             this.ShowAllUsersButt.Location = new System.Drawing.Point(68, 173);
             this.ShowAllUsersButt.Name = "ShowAllUsersButt";
             this.ShowAllUsersButt.Size = new System.Drawing.Size(331, 46);
-            this.ShowAllUsersButt.TabIndex = 5;
+            this.ShowAllUsersButt.TabIndex = 4;
             this.ShowAllUsersButt.Text = "Show All Users + Force password change";
             this.ShowAllUsersButt.UseVisualStyleBackColor = false;
             this.ShowAllUsersButt.Click += new System.EventHandler(this.ShowAllUsersButt_Click);
@@ -127,7 +127,7 @@
             this.ShowAllReservations.Location = new System.Drawing.Point(126, 225);
             this.ShowAllReservations.Name = "ShowAllReservations";
             this.ShowAllReservations.Size = new System.Drawing.Size(203, 46);
-            this.ShowAllReservations.TabIndex = 7;
+            this.ShowAllReservations.TabIndex = 5;
             this.ShowAllReservations.Text = "Show All Reservations";
             this.ShowAllReservations.UseVisualStyleBackColor = false;
             this.ShowAllReservations.Click += new System.EventHandler(this.ShowAllReservations_Click);
